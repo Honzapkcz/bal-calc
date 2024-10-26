@@ -1,0 +1,205 @@
+[gd_scene load_steps=9 format=3 uid="uid://dus4nbsmcta4"]
+
+[ext_resource type="Theme" uid="uid://2twidl4uadyr" path="res://styl.tres" id="1_0bviy"]
+[ext_resource type="PackedScene" uid="uid://b3wh7n6q1hhl3" path="res://penetration.tscn" id="1_m1v6t"]
+[ext_resource type="Script" path="res://menu.gd" id="2_7odh4"]
+[ext_resource type="PackedScene" uid="uid://dlychm8keu0to" path="res://penetration_image.tscn" id="3_c0atj"]
+[ext_resource type="Texture2D" uid="uid://bp181sgr46kqc" path="res://calculate.svg" id="4_23jl1"]
+[ext_resource type="Texture2D" uid="uid://b2sfs3b76sycs" path="res://info.svg" id="5_5in4i"]
+[ext_resource type="PackedScene" uid="uid://dqr6pnb7hblxq" path="res://simulation.tscn" id="5_tw2nw"]
+[ext_resource type="Texture2D" uid="uid://b1rwov6cio8y5" path="res://video_settings.svg" id="8_oiuo2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0bviy")
+script = ExtResource("2_7odh4")
+focus_color = Color(0.439216, 0.729412, 0.980392, 1)
+swipe_speed = 0.5
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="VBox"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Performace" parent="VBox/Scroll/HBox" instance=ExtResource("1_m1v6t")]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="Performace2" parent="VBox/Scroll/HBox" instance=ExtResource("1_m1v6t")]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="Penetrator" parent="VBox/Scroll/HBox" instance=ExtResource("3_c0atj")]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Simulation" parent="VBox/Scroll/HBox" instance=ExtResource("5_tw2nw")]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Performace" type="Button" parent="VBox/Panel/Margin/HBox"]
+modulate = Color(0.439216, 0.729412, 0.980392, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Panel/Margin/HBox/Performace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Icon" type="TextureRect" parent="VBox/Panel/Margin/HBox/Performace/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("4_23jl1")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="VBox/Panel/Margin/HBox/Performace/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+text = "Perf&Pen Calc"
+horizontal_alignment = 1
+
+[node name="Interior" type="Button" parent="VBox/Panel/Margin/HBox"]
+modulate = Color(0.439216, 0.729412, 0.980392, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Panel/Margin/HBox/Interior"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Icon" type="TextureRect" parent="VBox/Panel/Margin/HBox/Interior/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("4_23jl1")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="VBox/Panel/Margin/HBox/Interior/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+text = "Interior Calc"
+horizontal_alignment = 1
+
+[node name="Penetrator" type="Button" parent="VBox/Panel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Panel/Margin/HBox/Penetrator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Icon" type="TextureRect" parent="VBox/Panel/Margin/HBox/Penetrator/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("5_5in4i")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="VBox/Panel/Margin/HBox/Penetrator/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+text = "Penetrator"
+horizontal_alignment = 1
+
+[node name="Simulation" type="Button" parent="VBox/Panel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Panel/Margin/HBox/Simulation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Icon" type="TextureRect" parent="VBox/Panel/Margin/HBox/Simulation/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("8_oiuo2")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="VBox/Panel/Margin/HBox/Simulation/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+text = "Simulation"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBox/Panel/Margin/HBox/Performace" to="." method="on_menu_pressed" binds= ["Performace"]]
+[connection signal="pressed" from="VBox/Panel/Margin/HBox/Interior" to="." method="on_menu_pressed" binds= ["Performace"]]
+[connection signal="pressed" from="VBox/Panel/Margin/HBox/Penetrator" to="." method="on_menu_pressed" binds= ["Penetrator"]]
+[connection signal="pressed" from="VBox/Panel/Margin/HBox/Simulation" to="." method="on_menu_pressed" binds= ["Simulation"]]
