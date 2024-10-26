@@ -1,0 +1,207 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlychm8keu0to"]
+
+[ext_resource type="Theme" uid="uid://2twidl4uadyr" path="res://styl.tres" id="1_ylro2"]
+
+[sub_resource type="Gradient" id="Gradient_03vqq"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xhv0g"]
+gradient = SubResource("Gradient_03vqq")
+
+[node name="Penetrator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ylro2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(910, 1337)
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/CenterContainer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(910, 1337)
+size_2d_override = Vector2i(571, 876)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Polygon2D" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset = Vector2(0, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(0, 0, 0, -64, 64, -192, 64, 0)
+
+[node name="Polygon2D3" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset = Vector2(72, 768)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(8, 0, 8, -448, 40, -640, 72, -640, 104, -448, 104, 0)
+
+[node name="Polygon2D2" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(128, 0, 128, -64, 64, -192, 64, 0)
+
+[node name="Polygon2D4" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(47, -6, 47, -86, -49, -86, -49, -6)
+
+[node name="Line2D2" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(176, 768, 384, 768)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(352, 144, 352, 752)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(192, 512, 240, 512)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D5" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(64, 512, 16, 512)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(112, 128, 112, 64)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(144, 128, 144, 64)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D8" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(160, 96, 208, 96)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D9" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(96, 96, 48, 96)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D10" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(144, 128, 384, 128)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D11" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(240, 320, 176, 320)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D12" type="Line2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+points = PackedVector2Array(208, 304, 208, 144)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Polygon2D5" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(63, -342, 47, -358, 63, -374)
+
+[node name="Polygon2D6" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(-65, -342, -49, -358, -65, -374)
+
+[node name="Polygon2D7" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(223, -102, 207, -118, 239, -118)
+
+[node name="Polygon2D8" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(223, -742, 207, -726, 239, -726)
+
+[node name="Polygon2D9" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(79, -742, 95, -726, 63, -726)
+
+[node name="Polygon2D10" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(15, -774, 31, -790, 31, -758)
+
+[node name="Polygon2D11" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(-17, -774, -33, -790, -33, -758)
+
+[node name="Polygon2D12" type="Polygon2D" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+color = Color(0, 0, 0, 1)
+offset = Vector2(129, 870)
+texture = SubResource("GradientTexture1D_xhv0g")
+polygon = PackedVector2Array(95, -566, 63, -566, 79, -550)
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset_left = 313.0
+offset_top = 403.0
+offset_right = 353.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="Label2" type="Label" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset_left = 23.0
+offset_top = 429.0
+offset_right = 60.0
+offset_bottom = 517.0
+theme_override_font_sizes/font_size = 64
+text = "2"
+
+[node name="Label3" type="Label" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset_left = 220.0
+offset_top = 179.0
+offset_right = 257.0
+offset_bottom = 267.0
+theme_override_font_sizes/font_size = 64
+text = "3"
+
+[node name="Label4" type="Label" parent="VBoxContainer/CenterContainer/SubViewportContainer/SubViewport"]
+offset_left = 160.0
+offset_top = 11.0
+offset_right = 197.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 64
+text = "4"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_readonly_color = Color(0.847059, 0.847059, 0.847059, 1)
+text = "1 - Total lenght of penetrator material
+2 - Diameter
+3 - Frustrum Lenght
+4 - Frustrum diameter upper base"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+scroll_fit_content_height = true
