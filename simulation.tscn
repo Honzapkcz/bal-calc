@@ -5,12 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vjqjd08v55kh" path="res://play_arrow.svg" id="2_ari4i"]
 [ext_resource type="Texture2D" uid="uid://dvsni2wgptsot" path="res://Screenshot.png" id="3_dr1b0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_micd7"]
-bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rbnu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5umf"]
 bg_color = Color(0.223529, 0.223529, 0.223529, 0.6)
@@ -26,7 +21,12 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rbnu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_micd7"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Simulation" type="VBoxContainer"]
 anchors_preset = 15
@@ -72,10 +72,10 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_micd7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2rbnu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w5umf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_46q3f")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2rbnu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_micd7")
 toggle_mode = true
 icon = ExtResource("2_ari4i")
 icon_alignment = 1

@@ -4,12 +4,7 @@
 [ext_resource type="Script" path="res://penetration.gd" id="2_eiqaj"]
 [ext_resource type="Texture2D" uid="uid://c1aw0nb4hrthx" path="res://shortcut.svg" id="3_xxh8n"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wredq"]
-bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avbne"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndm83"]
 bg_color = Color(0.223529, 0.223529, 0.223529, 0.6)
@@ -25,7 +20,12 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avbne"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wredq"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -68,10 +68,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
-item_count = 3
 selected = 0
+item_count = 3
 popup/item_0/text = "Mode"
-popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_1/text = "Perforation"
 popup/item_1/id = 1
@@ -81,10 +80,9 @@ popup/item_2/id = 2
 [node name="material" type="OptionButton" parent="ScrollContainer/Penetration"]
 layout_mode = 2
 size_flags_horizontal = 3
-item_count = 4
 selected = 0
+item_count = 4
 popup/item_0/text = "Material"
-popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_1/text = "Tungsten"
 popup/item_1/id = 1
@@ -251,15 +249,15 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/icon_normal_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_focus_color = Color(0.439216, 0.729412, 0.980392, 1)
 theme_override_colors/icon_pressed_color = Color(0.439216, 0.729412, 0.980392, 1)
 theme_override_colors/icon_hover_color = Color(0.439216, 0.729412, 0.980392, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.439216, 0.729412, 0.980392, 1)
-theme_override_colors/icon_focus_color = Color(0.439216, 0.729412, 0.980392, 1)
 theme_override_colors/icon_disabled_color = Color(0.439216, 0.729412, 0.980392, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_wredq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_avbne")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ndm83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fu4bq")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_avbne")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wredq")
 icon = ExtResource("3_xxh8n")
 icon_alignment = 1
 

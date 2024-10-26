@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://drecrmo61gfk2"]
+[gd_scene load_steps=3 format=3 uid="uid://drecrmo61gfk2"]
 
 [ext_resource type="Script" path="res://interior.gd" id="1_wf5kf"]
 [ext_resource type="Theme" uid="uid://2twidl4uadyr" path="res://styl.tres" id="2_nkriu"]
-[ext_resource type="Script" path="res://penetration.gd" id="3_kvrr0"]
 
 [node name="InteriorCalculator" type="Control"]
 layout_mode = 3
@@ -11,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_nkriu")
 script = ExtResource("1_wf5kf")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -27,67 +27,23 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Penetration" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_nkriu")
-columns = 2
-script = ExtResource("3_kvrr0")
-
-[node name="Control4" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
+text = "Interior Balistic Calculator"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Control5" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-horizontal_alignment = 1
-
-[node name="mode" type="OptionButton" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-selected = 0
-item_count = 3
-popup/item_0/text = "Mode"
-popup/item_0/disabled = true
-popup/item_1/text = "Perforation"
-popup/item_1/id = 1
-popup/item_2/text = "Penetration"
-popup/item_2/id = 2
-
-[node name="material" type="OptionButton" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-selected = 0
-item_count = 4
-popup/item_0/text = "Material"
-popup/item_0/disabled = true
-popup/item_1/text = "Tungsten"
-popup/item_1/id = 1
-popup/item_2/text = "Depl. Uranium"
-popup/item_2/id = 2
-popup/item_3/text = "Steel"
-popup/item_3/id = 3
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Penetrator"
-horizontal_alignment = 1
-
-[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label11" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label11" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Total lenght of penet."
+text = "Caliber"
 
-[node name="p_len" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="p_len" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 min_value = 1.0
 max_value = 950.0
 value = 950.0
@@ -95,11 +51,11 @@ allow_greater = true
 alignment = 2
 suffix = "mm"
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Diameter"
+text = "Projectile travel len."
 
-[node name="dia" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="dia" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -108,11 +64,11 @@ allow_greater = true
 alignment = 2
 suffix = "mm"
 
-[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Frustum lenght"
+text = "Max gas pressure"
 
-[node name="f_len" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="f_len" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 80.0
@@ -120,11 +76,11 @@ allow_greater = true
 alignment = 2
 suffix = "mm"
 
-[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Frustum d upp. base"
+text = "Charge mass"
 
-[node name="df" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="df" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 6.0
@@ -132,11 +88,11 @@ allow_greater = true
 alignment = 2
 suffix = "mm"
 
-[node name="Label12" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label12" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Density"
+text = "Projectile mass"
 
-[node name="rhop" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="rhop" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 5000.0
@@ -145,11 +101,11 @@ value = 17200.0
 alignment = 2
 suffix = "kg/m³"
 
-[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Brinell Hardness No."
+text = "Sebert factor"
 
-[node name="bhnp" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="bhnp" type="SpinBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 100.0
@@ -157,72 +113,11 @@ max_value = 750.0
 value = 500.0
 alignment = 2
 
-[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-text = "Impact Velocity"
-
-[node name="vt" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 1.0
-step = 0.1
-value = 1.7
-allow_greater = true
-alignment = 2
-suffix = "km/s"
-
-[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Target"
-horizontal_alignment = 1
-
-[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-
-[node name="Label10" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-text = "Density"
-
-[node name="rhot" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 7700.0
-max_value = 8200.0
-value = 7850.0
-alignment = 2
-suffix = "kg/m³"
-
-[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-text = "Brinell Hardness No."
-
-[node name="bhnt" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 120.0
-max_value = 600.0
-value = 237.0
-alignment = 2
-
-[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-text = "NATO obliguity"
-
-[node name="nato" type="SpinBox" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-size_flags_horizontal = 3
-max_value = 75.0
-value = 60.0
-alignment = 2
-suffix = "˚"
-
-[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer/Penetration"]
-layout_mode = 2
-
-[node name="result" type="Label" parent="ScrollContainer/VBoxContainer/Penetration"]
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 autowrap_mode = 3
 
-[connection signal="item_selected" from="ScrollContainer/VBoxContainer/Penetration/mode" to="ScrollContainer/VBoxContainer/Penetration" method="_on_mode_item_selected"]
-[connection signal="item_selected" from="ScrollContainer/VBoxContainer/Penetration/material" to="ScrollContainer/VBoxContainer/Penetration" method="_on_material_item_selected"]
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " The calculator estimates the achievable muzzle velocity of projectiles fired from smooth-bore tank cannons with a given caliber, projectile travel length, and given charge and projectile mass."
+autowrap_mode = 3
