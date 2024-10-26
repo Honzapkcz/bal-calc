@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://2twidl4uadyr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wfpbb"]
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/styles/focus = SubResource("StyleBoxEmpty_wfpbb")
+Label/font_sizes/font_size = 50
+LineEdit/font_sizes/font_size = 50
+TabBar/font_sizes/font_size = 50
+TextEdit/font_sizes/font_size = 48
