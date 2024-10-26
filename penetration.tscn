@@ -1,0 +1,268 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3wh7n6q1hhl3"]
+
+[ext_resource type="Theme" uid="uid://2twidl4uadyr" path="res://styl.tres" id="1_g6qe0"]
+[ext_resource type="Script" path="res://penetration.gd" id="2_eiqaj"]
+[ext_resource type="Texture2D" uid="uid://c1aw0nb4hrthx" path="res://shortcut.svg" id="3_xxh8n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wredq"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndm83"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu4bq"]
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avbne"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+follow_focus = true
+
+[node name="Penetration" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_g6qe0")
+columns = 2
+script = ExtResource("2_eiqaj")
+
+[node name="Control4" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Balistic"
+horizontal_alignment = 1
+
+[node name="Control5" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Calculator"
+horizontal_alignment = 1
+
+[node name="mode" type="OptionButton" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "Mode"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "Perforation"
+popup/item_1/id = 1
+popup/item_2/text = "Penetration"
+popup/item_2/id = 2
+
+[node name="material" type="OptionButton" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 4
+selected = 0
+popup/item_0/text = "Material"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "Tungsten"
+popup/item_1/id = 1
+popup/item_2/text = "Depl. Uranium"
+popup/item_2/id = 2
+popup/item_3/text = "Steel"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Penetrator"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Total lenght of penet."
+
+[node name="p_len" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 950.0
+value = 950.0
+allow_greater = true
+alignment = 2
+suffix = "mm"
+
+[node name="Label2" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Diameter"
+
+[node name="dia" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 27.0
+allow_greater = true
+alignment = 2
+suffix = "mm"
+
+[node name="Label3" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Frustum lenght"
+
+[node name="f_len" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+allow_greater = true
+alignment = 2
+suffix = "mm"
+
+[node name="Label4" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Frustum d upp. base"
+
+[node name="df" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 6.0
+allow_greater = true
+alignment = 2
+suffix = "mm"
+
+[node name="Label12" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Density"
+
+[node name="rhop" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 5000.0
+max_value = 20000.0
+value = 17200.0
+alignment = 2
+suffix = "kg/m³"
+
+[node name="Label5" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Brinell Hardness No."
+
+[node name="bhnp" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 100.0
+max_value = 750.0
+value = 500.0
+alignment = 2
+
+[node name="Label6" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Impact Velocity"
+
+[node name="vt" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+step = 0.1
+value = 1.7
+allow_greater = true
+alignment = 2
+suffix = "km/s"
+
+[node name="Label7" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Target"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Density"
+
+[node name="rhot" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 7700.0
+max_value = 8200.0
+value = 7850.0
+alignment = 2
+suffix = "kg/m³"
+
+[node name="Label8" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "Brinell Hardness No."
+
+[node name="bhnt" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 120.0
+max_value = 600.0
+value = 237.0
+alignment = 2
+
+[node name="Label9" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+text = "NATO obliguity"
+
+[node name="nato" type="SpinBox" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 75.0
+value = 60.0
+alignment = 2
+suffix = "˚"
+
+[node name="Control3" type="Control" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+
+[node name="result" type="Label" parent="ScrollContainer/Penetration"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/icon_normal_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_pressed_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_hover_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_focus_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_colors/icon_disabled_color = Color(0.439216, 0.729412, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wredq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ndm83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu4bq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_avbne")
+icon = ExtResource("3_xxh8n")
+icon_alignment = 1
+
+[connection signal="item_selected" from="ScrollContainer/Penetration/mode" to="ScrollContainer/Penetration" method="_on_mode_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/Penetration/material" to="ScrollContainer/Penetration" method="_on_material_item_selected"]
+[connection signal="pressed" from="Button" to="ScrollContainer/Penetration" method="calculate"]
