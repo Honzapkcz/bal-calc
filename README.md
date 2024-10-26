@@ -13,7 +13,7 @@ So, one day one friend asked me, If I could make some web page into native mobil
 
 "Don't worry about it, I won't use them to precisely calculate a tank head rotation needed for target anihilation.", with these words, he left.
 
-[www.longrods.ch](www.longrods.ch) is what he gave me. Page dedicated to balistics, tank missiles and research about them.
+[www.longrods.ch](https://www.longrods.ch) is what he gave me. Page dedicated to balistics, tank missiles and research about them.
 
 I almost fainted, what I saw was a typical 90' PHP stylish websise with the old table layout.
 The worse was the legacy code. The penetration calculator used over 50 variables (in the format of letter_digit) and used illegal programming war crimes on daily basis.
