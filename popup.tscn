@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmgag7b288rna"]
+
+[ext_resource type="Theme" uid="uid://2twidl4uadyr" path="res://styl.tres" id="1_yoqav"]
+[ext_resource type="Script" path="res://popup.gd" id="2_hbqma"]
+
+[node name="PanelPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yoqav")
+script = ExtResource("2_hbqma")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.717647)
+
+[node name="Panel" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 1000
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+
+[node name="Panel" type="MarginContainer" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Layout" type="VBoxContainer" parent="Panel/Panel/Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Panel/Panel/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Výsledek"
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Panel/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="CopyButton" type="Button" parent="Panel/Panel/Panel/Layout/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "  Copy  "
+
+[node name="CloseButton" type="Button" parent="Panel/Panel/Panel/Layout/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "  Close  "
+
+[connection signal="pressed" from="Panel/Panel/Panel/Layout/Buttons/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="Panel/Panel/Panel/Layout/Buttons/CloseButton" to="." method="_on_close_button_pressed"]
