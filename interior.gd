@@ -24,98 +24,44 @@ const k0_e1: float = -78.1206
 const k0_e0: float =   8.1352
 const pi: float = 3.141593
 
-var msg
-var n_msg
-var document
-var ml_max
-var ml_min
-var mg_max
-var mg_min
-var cal
-var a
-var b
-var c
-var d
-var k2
-var k1
-var k0
-var f
-var pm
-var v0
+var ml_max: float
+var ml_min: float
+var mg_max: float
+var mg_min: float
+var cal: float
+var a: float
+var b: float
+var c: float
+var d: float
+var k2: float
+var k1: float
+var k0: float
+var f: float
+var pm: float
+var v0: float
 
 func calculate():
-	var kal
-	var gbw
-	var pmax
-	var ml
-	var mg
-	var fsebert
+	var kal: float
+	var gbw: float
+	var pmax: float
+	var ml: float
+	var mg: float
+	var fsebert: float
 
-	msg=""
-	n_msg= 0
+	kal = float($S/V/kal.value)
+	gbw = float($S/V/gbw.value)
+	pmax = float($S/V/pmax.value)
+	ml = float($S/V/ml.value)
+	mg = float($S/V/mg.value)
+	fsebert = float($S/V/fsebert.value)
+	
 
-	kal = float(document.getElementById("kal").value)
-	if (kal < 118):
-		n_msg=n_msg+1
-		msg=msg+"- The caliber must be greater or equal 118 mm.<br>"
-	if (kal > 142):
-		n_msg=n_msg+1
-		msg=msg+"- The caliber must be less or equal 142 mm.<br>"
-
-	gbw = float(document.getElementById("gbw").value)
-	if (gbw < 4):
-		n_msg=n_msg+1
-		msg=msg+"- The rojectile travel length must be greater or equal 4 m.<br>" 
-	if (gbw > 7):
-		n_msg=n_msg+1
-		msg=msg+"- The rojectile travel length must be less or equal 7 m.<br>" 
-
-	pmax = float(document.getElementById("pmax").value)
-	if (pmax < 4000):
-		n_msg=n_msg+1
-		msg=msg+"- The maximum gas pressure must be greater or equal 4000 bar.<br>"
-	if (pmax > 6500):
-		n_msg=n_msg+1
-		msg=msg+"- The maximum gas pressure must be less or equal 6500 bar.<br>"
-
-	ml = float(document.getElementById("ml").value)
-	ml_max=0.4*kal-38
-	ml_min=0.20*kal-18
-	if (ml > ml_max):
-		n_msg=n_msg+1
-		msg=msg+"- The maximum charge mass must be less then "+ ml_max.toFixed(2)+" kg.<br>"
-	if (ml < ml_min):
-		n_msg=n_msg+1
-		msg=msg+"- The minimum charge mass must be nicht greater than "+ ml_min.toFixed(2)+" kg.<br>"
-
-	mg = float(document.getElementById("mg").value)
-	mg_max=0.4*kal-37
-	mg_min=0.1*kal-6
-	if (mg > mg_max):
-		n_msg=n_msg+1
-		msg=msg+"- The maximum projectile mass must be less then "+ mg_max.toFixed(2)+" kg.<br>"
-	if (mg < mg_min):
-		n_msg=n_msg+1
-		msg=msg+"- The minimum projectile mass must be greater than "+ mg_min.toFixed(2)+" kg.<br>"
-
-	fsebert = float(document.getElementById("fsebert").value)
-	if (fsebert > 0.48):
-		n_msg=n_msg+1
-		msg=msg+"- The Sebert factor should be between 0.43 and 0.48.<br>"
-	if (fsebert < 0.43):
-		n_msg=n_msg+1
-		msg=msg+"- The Sebert factor should be between 0.43 and 0.48.<br>"
-
-
-	# <!-- calculations -->
-
-	cal = kal/1000                              #  Kaliber in (m)
+	cal = kal/1000.0                              #  Kaliber in (m)
 
 	a =  ac2*cal**2 + ac1*cal +ac0     #  Koeffizient a
 	b =  bc2*cal**2 + bc1*cal +bc0     #  Koeffizient b
 	c =  cc2*cal**2 + cc1*cal +cc0     #  Koeffizient c
 	d =  dc2*cal**2 + dc1*cal +dc0     #  Koeffizient d
-
 
 	k2 = k2_e2*cal**2 + k2_e1*cal +k2_e0
 	k1 = k1_e2*cal**2 + k1_e1*cal +k1_e0
@@ -125,15 +71,6 @@ func calculate():
 
 	pm = f*pmax*(a*ml+b*mg+c*pmax +d)          #  mittlerer Gasdruck
 
-	v0 = (pi*pm*cal**2*gbw/20/(mg+fsebert*ml)**0.5)
-
-	if(n_msg > 0):
-		pm=0
-		v0=0
-		msg=msg+"- The initial velocity was set to zero.<br>"
-			 
-	# <!-- results -->
-
-	document.getElementById('result').innerHTML = '<p style="line-height: 120%" font size="4"><b>Result:</b></p>'
-	document.getElementById('v_anfang').innerHTML = '<b>Muzzle velocity:  '+ str(snappedf(v0, 0.001))+' km/s</b>'
-	document.getElementById('msg').innerHTML =  msg
+	v0 = pow(pi * pm * pow(cal, 2) * gbw / 20 / (mg + fsebert * ml), 0.5); 
+	
+	GlobalPopup.show_panel("Muzzle velocity:  " + str(snappedf(v0, 0.001)) + " km/s\n")
