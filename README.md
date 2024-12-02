@@ -15,11 +15,14 @@ So, one day one friend asked me, If I could make some web page into native mobil
 
 [www.longrods.ch](https://www.longrods.ch) is what he gave me. Page dedicated to balistics, tank missiles and research about them.
 
-I almost fainted, what I saw was a typical 90' PHP stylish websise with the old table layout.
+I almost fainted, what I saw was a typical 90' PHP stylish website with the old table layout.
 The worse was the legacy code. The penetration calculator used over 50 variables (in the format of letter_digit) and used illegal programming war crimes on daily basis.
-Bit I accepted the challenge. I started refractoring. But the code fought back.
-I heared a sound, sound of a beast, The Beast of the spagetti code. Scared, I tripped over a formula.
-The formula doesn't work anymore, The Code doesn't work anymore! It's over.
+
+I accepted the challenge. I started refractoring. But the code fought back.
+
+I heared a sound, sound of a beast, The Beast of the spagetti code. Scared, I tripped over an equation.
+
+The equation doesn't work anymore, The Code doesn't work anymore! It's over.
 
 
 *Really? Over?*
