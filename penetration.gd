@@ -61,14 +61,9 @@ func calculate():
 	var rhot: float = ($rhot as SpinBox).value
 	var bhnt: float = ($bhnt as SpinBox).value
 	var nato: float = ($nato as SpinBox).value
-
-	if(df>dia):
-		msg += "- The upper frustum diameter must be equal or less than the penetrator diameter.\n" 
 	   
 	lw=p_len-f_len*(1-(1+df/dia*(1+df/dia))/3)
 	lwd=lw/dia
-	if(lwd<4):
-		msg += "- The aspect ratio must be equal or greater than 4.\n"
 	   
 	elwd=1/tanh(b0+b1*lwd)
 	var nato_s=nato
@@ -79,45 +74,15 @@ func calculate():
 	if(mat == TUNGSTEN and process == PERFORATION):
 		eterm5_t=exp(-(c0_t+c1_t*bhnt)*bhnt/rhop/vt_s/vt_s)
 		vt_min=pow((c0_t+c1_t*bhnt)*bhnt/rhop/1.5,0.5)
-		vt_min_s=vt_min
-		if(vt<vt_min):
-			msg += "- The impact velocity is less than the minimal velocity \n   ("+str(vt_min_s)+" km/s)   for eroding penetration.\n"
-		  
-		if(bhnt<149):
-			msg += "- The target hardness should be greater or equal than 150.\n"
-		  
-		if(bhnt>501):
-			msg += "- The target hardness should be less or equal than 500.\n"
-		  
-		if(rhop<16500):
-			msg += "- The penetrator density should be greater than 16500 kg/m^3.\n"
-		  
-		if(rhop>19300):
-			msg += "- The penetrator density should be less than 19300 kg/m^3.\n"
-		  
+		vt_min_s=vt_min	  
 		perf=a_t*lw*elwd*enato*edens*eterm5_t
-		  
+		 
 		GlobalPopup.show_panel('The perforation limit of the tungsten penetrator is '+str(perf)+' mm.')
    
 	if(mat == DU and process == PERFORATION):
 		eterm5_d=exp(-(c0_d+c1_d*bhnt)*bhnt/rhop/vt_s/vt_s)
 		vt_min=pow((c0_t+c1_t*bhnt)*bhnt/rhop/1.5,0.5)
 		vt_min_s=vt_min
-		if(vt<vt_min):
-			msg += "- The impact velocity is less than the minimal velocity \n   ("+str(vt_min_s)+" km/s)   for eroding penetration.\n"
-	  
-		if(bhnt<149):
-			msg += "- The target hardness should be greater or equal than 150.\n"
-		  
-		if(bhnt>501):
-			msg += "- The target hardness should be less or equal than 500.\n"
-		  
-		if(rhop<16500):
-			msg += "- The penetrator density should be greater than 16500 kg/m^3.\n"
-		  
-		if(rhop>19100):
-			msg += "- The penetrator density should be less than 19100 kg/m^3.\n"
-		  
 		perf=a_d*lw*elwd*enato*edens*eterm5_d
 		  
 		GlobalPopup.show_panel('The perforation limit of the DU penetrator is '+str(perf)+' mm.')
@@ -126,30 +91,7 @@ func calculate():
 		eterm5_s=exp(-c0_s*pow(bhnt,k_s)*pow(bhnp,n_s)/rhop/vt_s/vt_s)
 		vt_min=pow(c0_s*pow(bhnt,k_s)*pow(bhnp,n_s)/rhop/1.5,0.5)
 		vt_min_s=vt_min
-		if(vt<vt_min):
-			msg += "- The impact velocity is less than the minimal velocity \n   ("+str(vt_min_s)+" km/s)   for eroding penetration.\n"
-	  
-		if(bhnt<119):
-			msg += "- The target hardness should be greater or equal than 120.\n"
-		  
-		if(bhnt>551):
-			msg += "- The target hardness should be less or equal than 550.\n"
-		  
-		if(bhnp<199):
-			msg += "- The penetrator hardness should be greater or equal than 200.\n"
-		  
-		if(bhnp>751):
-			msg += "- The penetrator hardness should be less or equal than 750.\n"
-		  
 		perf=a_s*lw*elwd*enato*edens*eterm5_s
-		if(rhop<7700):
-			msg += "- The density of the steel penetrator should be greater than 7700 kg/m^3.\n"
-		  
-		if(rhop>8500):
-			msg += "- The density of the steel penetrator should be less than 8500 kg/m^3.\n"
-		  
-		if(is_nan(bhnp)):
-			msg += "- The penetrator hardness is not defined.\n"
 		  
 		GlobalPopup.show_panel('The perforation limit of the steel penetrator is '+str(perf)+' mm.')
 		  
@@ -158,13 +100,6 @@ func calculate():
 		eterm5_sit=exp(-(c0_sit+c1_sit*bhnt)*bhnt/rhop/vt_s/vt_s)
 		vt_min=pow((c0_sit+c1_sit*bhnt)*bhnt/rhop/1.8,0.5)
 		vt_min_s=vt_min
-		
-		if(vt<vt_min):
-			msg += "- The impact velocity is less than the minimal velocity \n   ("+str(vt_min_s)+" km/s)   for eroding penetration.\n"
-		  
-		if(rhop<16500):
-			msg += "- The penetrator density should be greater than 16500 kg/m^3.\n"
-		  
 		pene = a_sit * lw * elwd * edens * eterm5_sit
 	  
 		GlobalPopup.show_panel('The penetration depth of the tungsten penetrator is '+str(pene)+' mm. The obliquity was set to zero.')
