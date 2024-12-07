@@ -70,6 +70,7 @@ min_value = 100.0
 max_value = 150.0
 value = 120.0
 allow_greater = true
+allow_lesser = true
 alignment = 2
 suffix = "mm"
 
@@ -85,6 +86,7 @@ max_value = 8.0
 step = 0.01
 value = 6.04
 allow_greater = true
+allow_lesser = true
 alignment = 2
 suffix = "m"
 
@@ -99,6 +101,7 @@ min_value = 4000.0
 max_value = 7500.0
 value = 5500.0
 allow_greater = true
+allow_lesser = true
 alignment = 2
 suffix = "bar"
 
@@ -114,6 +117,7 @@ max_value = 18.0
 step = 0.1
 value = 8.9
 allow_greater = true
+allow_lesser = true
 alignment = 2
 suffix = "kg"
 
@@ -128,6 +132,8 @@ min_value = 5.0
 max_value = 20.0
 step = 0.1
 value = 8.3
+allow_greater = true
+allow_lesser = true
 alignment = 2
 suffix = "kg"
 
@@ -142,6 +148,8 @@ min_value = 0.4
 max_value = 0.5
 step = 0.01
 value = 0.43
+allow_greater = true
+allow_lesser = true
 alignment = 2
 
 [node name="Label2" type="Label" parent="S/V"]
